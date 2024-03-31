@@ -1,3 +1,2 @@
-telegram screenshots in loginRoutes.js
 and in index.ejs add css
 and make logOut
