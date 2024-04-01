@@ -8,6 +8,8 @@ const port = process.env.PORT || 7000;
 const bodyParser = require("body-parser");
 const mainRoutes = require("./routes/mainRoutes");
 const loginRoutes = require("./routes/loginRoutes");
+const logOutRoutes = require("./routes/logOutRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 app.engine("ejs", require("ejs").renderFile);
 app.set("view engine", "ejs");
@@ -22,6 +24,8 @@ app.use(
 );
 
 app.use("/", mainRoutes);
+app.use("/admin", adminRoutes);
+app.use("/logOut", logOutRoutes);
 app.use("/zhenyaLogin", loginRoutes);
 
 const start = async () => {

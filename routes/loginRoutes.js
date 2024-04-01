@@ -3,7 +3,7 @@ const { Router } = require("express");
 const router = new Router();
 
 router.get("/", (req, res) => {
-  res.render("login");
+  res.render("login", { error: "" });
 });
 
 router.post("/", async (req, res) => {
@@ -12,10 +12,10 @@ router.post("/", async (req, res) => {
     if (login === process.env.LOGIN && password === process.env.PASSWORD) {
       req.session.user = login;
       console.log("Done!");
-      res.redirect("/");
+      res.render("admin", { login });
     } else {
       console.log("Wrong login or password!");
-      res.render("admin", { error: "Wrong login or password!" });
+      res.render("login", { error: "Wrong login or password!" });
     }
   } catch (err) {
     console.log(err);

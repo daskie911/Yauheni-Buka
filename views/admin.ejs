@@ -3,16 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/main.css" />
-    <title>Main</title>
+    <title>Admin</title>
   </head>
   <body>
     <header>
-      <h1>About ME</h1>
+      <h1>Admin</h1>
+      <p>Welcome <%= login %></p>
     </header>
-    <main></main>
-    <footer>
-      <p>Copyright &copy; 2024</p>
-    </footer>
+    <main>
+      <form action="/logOut" method="post">
+        <button type="submit">Log Out</button>
+      </form>
+    </main>
   </body>
 </html>
