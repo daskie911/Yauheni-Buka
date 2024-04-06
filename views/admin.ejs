@@ -9,11 +9,28 @@
     <header>
       <h1>Admin</h1>
       <p>Welcome <%= login %></p>
-    </header>
-    <main>
       <form action="/logOut" method="post">
         <button type="submit">Log Out</button>
       </form>
+    </header>
+    <main>
+      <% contacts.forEach(contact => { %>
+      <form action="/admin/editContacts/<%= contact._id %>" method="post">
+        <input
+          type="text"
+          name="phone"
+          placeholder="Phone"
+          value="<%= contact.phone %>"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value="<%= contact.email %>"
+        />
+        <button type="submit">Add Changes</button>
+      </form>
+      <% }); %>
     </main>
   </body>
 </html>
