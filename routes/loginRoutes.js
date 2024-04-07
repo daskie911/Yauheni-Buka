@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
     if (login === process.env.LOGIN && password === process.env.PASSWORD) {
       req.session.user = login;
       console.log("Done!");
-      res.render("admin", { login });
+      res.render("admin", { contacts, login: req.session.user });
     } else {
       console.log("Wrong login or password!");
       res.render("login", { error: "Wrong login or password!" });
