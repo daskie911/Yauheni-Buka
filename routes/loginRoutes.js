@@ -1,5 +1,5 @@
 const { Router } = require("express");
-
+const Contact = require("../model/Contact");
 const router = new Router();
 
 router.get("/", (req, res) => {
@@ -10,6 +10,7 @@ router.post("/", async (req, res) => {
   try {
     const { login, password } = req.body;
     if (login === process.env.LOGIN && password === process.env.PASSWORD) {
+      const contacts = await Contact.find();
       req.session.user = login;
       console.log("Done!");
       res.render("admin", { contacts, login: req.session.user });
