@@ -32,6 +32,14 @@
         <button type="submit">Add Changes</button>
       </form>
       <% }); %>
+      <div class="container">
+        <form action="/admin/addCards" method="post">
+          <input type="text" name="image" placeholder="Enter Image Url">
+          <input type="text" name="title" placeholder="Enter Title">
+          <input type="text" name="description" placeholder="Enter Description">
+          <button type="submit">Add Card</button>
+        </form>
+      </div>
     </main>
   </body>
 </html>

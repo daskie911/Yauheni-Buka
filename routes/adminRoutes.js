@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const Contact = require("../model/Contact");
+const Card = require("../model/Card");
 
 const router = new Router();
 
@@ -28,10 +29,10 @@ router.post("/editContacts/:id", async (req, res) => {
 
       if (!existingContact) {
         // if contact not found
-        return res.redirect("/"); 
+        return res.redirect("/");
       }
       // update contact phone and email
-      existingContact.email = email; 
+      existingContact.email = email;
       existingContact.phone = phone;
       await existingContact.save(); // save contact
 
@@ -39,6 +40,22 @@ router.post("/editContacts/:id", async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+    res.redirect("/");
+  }
+});
+
+router.post("/addCards", async (req, res) => {
+  // add cards
+  try {
+    if (req.session && req.session.user) {
+      const { image, title, description } = req.body;
+      console.log(image, title, description);
+      const newCard = new Card({ image, title, description });
+      await newCard.save();
+      res.redirect("/admin");
+    }
+  } catch (err) {
+    console.log(err);
     res.redirect("/");
   }
 });
