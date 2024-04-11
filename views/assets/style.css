@@ -358,7 +358,6 @@ nav button#menuButton {
   font-size: 12px;
 }
 
-
 footer {
   background-color: #deebee;
   padding: 85px;
@@ -391,8 +390,8 @@ footer .bottom p {
   font-size: 12px;
 }
 
-footer .bottom .links a {
-  font-size: 12px;
+footer .bottom .contact-me p {
+  font-size: 15px;
   margin-left: 14px;
 }
 
