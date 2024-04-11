@@ -16,27 +16,34 @@
     </header>
     <main>
       <% contacts.forEach(contact => { %>
-      <form action="/admin/editContacts/<%= contact._id %>" method="post">
-        <input
-          type="text"
-          name="phone"
-          placeholder="Phone"
-          value="<%= contact.phone %>"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value="<%= contact.email %>"
-        />
-        <button type="submit">Add Changes</button>
-      </form>
+      <div class="container1">
+        <form action="/admin/editContacts/<%= contact._id %>" method="post">
+          <input
+            type="text"
+            name="phone"
+            placeholder="Phone"
+            value="<%= contact.phone %>"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value="<%= contact.email %>"
+          />
+          <button type="submit">Add Changes</button>
+        </form>
+      </div>
+
       <% }); %>
-      <div class="container">
+      <div class="container2">
         <form action="/admin/addCards" method="post">
-          <input type="text" name="image" placeholder="Enter Image Url">
-          <input type="text" name="title" placeholder="Enter Title">
-          <input type="text" name="description" placeholder="Enter Description">
+          <input type="text" name="image" placeholder="Enter Image Url" />
+          <input type="text" name="title" placeholder="Enter Title" />
+          <input
+            type="text"
+            name="description"
+            placeholder="Enter Description"
+          />
           <button type="submit">Add Card</button>
         </form>
       </div>
