@@ -7,7 +7,7 @@ const Card = require("../model/Card");
 app.get("/", async (req, res) => {
   try{
     const contact = await Contact.findOne();
-    const cards = await Card.find();
+    const cards = await Card.find().sort({ _id: -1 });
     res.render("index", { cards, contact });
   }
   catch(err){

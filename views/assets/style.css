@@ -252,8 +252,10 @@ nav button#menuButton {
 
 .portfolio .portfo-items {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
+  max-height: 730px; /* Высота рассчитана так, чтобы вместить три элемента */
+  overflow-y: auto; /* Включает вертикальный скроллбар, если содержимое превышает максимальную высоту */
 }
 
 .portfolio .portfo-items .item {
@@ -286,7 +288,9 @@ nav button#menuButton {
 }
 
 .portfolio .portfo-items .item .info p {
-  font-size: 13px;
+  overflow: hidden; /* Скрывает текст, выходящий за пределы элемента */
+  text-overflow: ellipsis; /* Добавляет многоточие, если текст не помещается */
+  white-space: nowrap; /* Предотвращает перенос текста на новую строку */
 }
 
 .portfolio .portfo-items .item .info a {
