@@ -48,9 +48,8 @@ router.post("/addCards", async (req, res) => {
   // add cards
   try {
     if (req.session && req.session.user) {
-      const { image, title, description } = req.body;
-      console.log(image, title, description);
-      const newCard = new Card({ image, title, description });
+      const { image, title, description, link } = req.body;
+      const newCard = new Card({ image, title, description, link });
       await newCard.save();
       res.redirect("/admin");
     }

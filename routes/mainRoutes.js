@@ -3,17 +3,12 @@ const app = express();
 const Contact = require("../model/Contact");
 const Card = require("../model/Card");
 
-app.get("/", async (req, res) => {
-  const contact = await Contact.findOne();
-  res.render("index", { contact });
-});
-
-// i need add editing cards for admin and i need edit portfolio in index.ejs
 
 app.get("/", async (req, res) => {
   try{
+    const contact = await Contact.findOne();
     const cards = await Card.find();
-    res.render("index", { cards });
+    res.render("index", { cards, contact });
   }
   catch(err){
     console.log(err);

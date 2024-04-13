@@ -132,9 +132,23 @@
           ><button><i class="bx bxl-github"></i> Check My GitHub</button></a
         >
       </div>
-
       <div class="portfo-items">
+        <!-- portfolio -->
+        <% if (cards.length > 0) { %> <% cards.forEach(card => { %>
         <div class="item">
+          <img src="<%= card.image %>" />
+          <div class="info">
+            <h4><%= card.title %></h4>
+            <p><%= card.description %></p>
+            <a href="<%= card.link %>" target="_blank"
+              >View on GitHub<i class="bx bx-link-external"></i
+            ></a>
+          </div>
+        </div>
+        <% }); %> <% } else { %>
+        <h3>No cards yet</h3>
+        <% } %>
+        <!-- <div class="item">
           <img src="assets/img/sc-1.jpg" />
           <div class="info">
             <h4>Portfolio #1</h4>
@@ -155,18 +169,7 @@
             </p>
             <a href="#">View on GitHub<i class="bx bx-link-external"></i></a>
           </div>
-        </div>
-        <div class="item">
-          <img src="assets/img/sc-3.jpg" />
-          <div class="info">
-            <h4>Site #3</h4>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia
-              quidem quo numquam a laudantium.
-            </p>
-            <a href="#">View on GitHub<i class="bx bx-link-external"></i></a>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
 

@@ -13,6 +13,10 @@ const CardSchema = new Schema({
         type: String,
         required: true
     },
+    link: {
+        type: String,
+        required: true
+    }
 });
 
 module.exports = model('Card', CardSchema);
