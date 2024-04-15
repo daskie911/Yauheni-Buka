@@ -254,8 +254,8 @@ nav button#menuButton {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-height: 730px; /* Высота рассчитана так, чтобы вместить три элемента */
-  overflow-y: auto; /* Включает вертикальный скроллбар, если содержимое превышает максимальную высоту */
+  max-height: 730px;
+  overflow-y: auto;
 }
 
 .portfolio .portfo-items .item {
@@ -288,9 +288,20 @@ nav button#menuButton {
 }
 
 .portfolio .portfo-items .item .info p {
-  overflow: hidden; /* Скрывает текст, выходящий за пределы элемента */
-  text-overflow: ellipsis; /* Добавляет многоточие, если текст не помещается */
-  white-space: nowrap; /* Предотвращает перенос текста на новую строку */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portfolio .portfo-items .item .info textarea.card-description {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  resize: none;
 }
 
 .portfolio .portfo-items .item .info a {

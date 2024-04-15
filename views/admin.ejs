@@ -35,16 +35,67 @@
       </div>
 
       <% }); %>
-      <div class="container2">
-        <form action="/admin/addCards" method="post">
-          <input type="text" name="image" placeholder="Enter Image Url" />
-          <input type="text" name="title" placeholder="Enter Title" maxlength="20"/>
+      <hr />
+      <br />
+      <!-- edit cards -->
+      <% if (cards.length > 0) { %> <% cards.forEach(card => { %>
+      <div class="container1">
+        <form action="/admin/editCards/<%= card._id %>" method="post">
+          <input
+            type="text"
+            name="image"
+            placeholder="Enter Image Url"
+            value="<%= card.image %>"
+          />
+          <input
+            type="text"
+            name="title"
+            placeholder="Enter Title"
+            value="<%= card.title %>"
+          />
           <input
             type="text"
             name="description"
             placeholder="Enter Description"
+            value="<%= card.description %>"
           />
-          <input type="text" name="link" placeholder="Link" />
+          <input
+            type="text"
+            name="link"
+            placeholder="Link"
+            value="<%= card.link %>"
+          />
+          <button type="submit">Add Changes</button>
+        </form>
+      </div>
+      <% }); %> <% } else { %>
+      <p>No cards found</p>
+      <% } %>
+      <!-- end of edit cards -->
+      <hr />
+      <div class="container2">
+        <h1>Add New</h1>
+        <form action="/admin/addCards" method="post">
+          <input
+            type="text"
+            name="image"
+            placeholder="Enter Image Url"
+            required
+          />
+          <input
+            type="text"
+            name="title"
+            placeholder="Enter Title"
+            maxlength="20"
+            required
+          />
+          <input
+            type="text"
+            name="description"
+            placeholder="Enter Description"
+            required
+          />
+          <input type="text" name="link" placeholder="Link" required />
           <button type="submit">Add Card</button>
         </form>
       </div>

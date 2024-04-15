@@ -139,7 +139,8 @@
           <img src="<%= card.image %>" />
           <div class="info">
             <h4><%= card.title %></h4>
-            <p><%= card.description %></p>
+            <!-- <p><%= card.description %></p> -->
+            <textarea readonly class="card-description"><%= card.description %></textarea>
             <a href="<%= card.link %>" target="_blank"
               >View on GitHub<i class="bx bx-link-external"></i
             ></a>
