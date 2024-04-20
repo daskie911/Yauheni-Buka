@@ -59,8 +59,8 @@ router.post("/addCards", async (req, res) => {
   }
 });
 
+// edit cards
 router.post("/editCards/:id", async (req, res) => {
-  // edit cards
   try {
     if (req.session && req.session.user) {
       const { id } = req.params; // get id from url
@@ -78,6 +78,20 @@ router.post("/editCards/:id", async (req, res) => {
       existingCard.link = link;
       await existingCard.save(); // save card
 
+      res.redirect("/admin"); // redirect to admin page
+    }
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
+// delete card
+router.post("/deleteCards/:id", async (req, res) => {
+  try {
+    if (req.session && req.session.user) {
+      const { id } = req.params; // get id from url // params its a /<=id>/
+      await Card.findByIdAndDelete(id); // delete contact by id
       res.redirect("/admin"); // redirect to admin page
     }
   } catch (error) {

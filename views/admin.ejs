@@ -37,7 +37,7 @@
       <% }); %>
       <hr />
       <br />
-      <!-- edit cards -->
+      <!-- edit cards and delete-->
       <% if (cards.length > 0) { %> <% cards.forEach(card => { %>
       <div class="container1">
         <form action="/admin/editCards/<%= card._id %>" method="post">
@@ -66,6 +66,10 @@
             value="<%= card.link %>"
           />
           <button type="submit">Add Changes</button>
+        </form>
+        <!-- delete card -->
+        <form action="/admin/deleteCards/<%= card._id %>" method="post">
+          <button type="submit">Delete</button>
         </form>
       </div>
       <% }); %> <% } else { %>
