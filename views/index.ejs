@@ -41,62 +41,25 @@
         <img src="assets/img/me.png" />
       </div>
     </div>
-
+    <!-- add new skill -->
     <div class="skills" id="skills">
       <h5>My skills</h5>
       <h3>What I can do</h3>
       <div class="skill-item">
+        <% if (skills.length > 0) { %> <% skills.forEach(skill => { %>
         <div class="item">
           <div class="icon">
-            <i class="bx bxl-nodejs"></i>
-            <h4>Node.js</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Molestiae error debitis reprehenderit eligendi exercitationem hic
-              possimus expedita, enim veritatis impedit, ipsam soluta culpa
-              mollitia, obcaecati fugiat magnam esse explicabo aperiam!
-            </p>
+            <i class="bx bxl-nodejs"><img src="<%= skill.logo %>" /></i>
+            <h4><%= skill.title %></h4>
+            <p><%= skill.description %></p>
           </div>
         </div>
-        <div class="item">
-          <div class="icon">
-            <i class="bx bxl-javascript"></i>
-            <h4>JavaScript</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates dignissimos deleniti laudantium dolores totam vero,
-              assumenda, tempore fugiat cupiditate amet quidem? Corporis ad id
-              dolorum recusandae veniam magni eum esse.
-            </p>
-          </div>
-        </div>
-        <div class="item">
-          <div class="icon">
-            <i class="bx bxl-html5"></i>
-            <h4>HTML</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-              odit, dignissimos sequi ab dolor illo nostrum commodi expedita quo
-              nisi, iusto dolorem ipsum, cum similique saepe. Fugit quo omnis
-              numquam.
-            </p>
-          </div>
-        </div>
-        <div class="item">
-          <div class="icon">
-            <i class="bx bxl-css3"></i>
-            <h4>CSS</h4>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Consectetur mollitia hic nulla voluptatum perferendis quis
-              deleniti culpa ex sint ratione quisquam voluptates totam officia,
-              in laboriosam, laudantium dicta repellendus reiciendis!
-            </p>
-          </div>
-        </div>
+        <% }); %> <% } else { %>
+        <h3>No skills yet</h3>
+        <% } %>
       </div>
     </div>
-
+    <!-- end of add new skill -->
     <div class="about" id="about">
       <div class="left">
         <img src="assets/img/about-img.png" />
@@ -139,8 +102,9 @@
           <img src="<%= card.image %>" />
           <div class="info">
             <h4><%= card.title %></h4>
-            <!-- <p><%= card.description %></p> -->
-            <textarea readonly class="card-description"><%= card.description %></textarea>
+            <textarea readonly class="card-description">
+<%= card.description %></textarea
+            >
             <a href="<%= card.link %>" target="_blank"
               >View on GitHub<i class="bx bx-link-external"></i
             ></a>
