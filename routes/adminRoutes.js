@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const Contact = require("../model/Contact");
 const Card = require("../model/Card");
+const Skill = require("../model/Skill");
 
 const router = new Router();
 
@@ -93,6 +94,21 @@ router.post("/deleteCards/:id", async (req, res) => {
       const { id } = req.params; // get id from url // params its a /<=id>/
       await Card.findByIdAndDelete(id); // delete contact by id
       res.redirect("/admin"); // redirect to admin page
+    }
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
+// add new Skill
+router.post("/addSkill", async (req, res) => {
+  try {
+    if (req.session && req.session.user) {
+      const { logo, title, description } = req.body;
+      const newSkill = new Skill({ logo, title, description });
+      await newSkill.save();
+      res.redirect("/admin");
     }
   } catch (error) {
     console.log(error);

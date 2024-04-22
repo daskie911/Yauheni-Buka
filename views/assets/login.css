@@ -19,7 +19,7 @@ body {
 
 .container {
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 0; /* Set border radius to 0 for square borders */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
@@ -209,4 +209,11 @@ body {
 
 .container.active .toggle-right {
   transform: translateX(200%);
+}
+
+.error {
+  color: rgb(100, 136, 227);
+  font-size: 12px;
+  text-align: center;
+  justify-self: center;
 }

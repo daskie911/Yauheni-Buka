@@ -76,6 +76,8 @@
       <p>No cards found</p>
       <% } %>
       <!-- end of edit cards -->
+
+      <!-- add new card -->
       <hr />
       <div class="container2">
         <h1>Add New</h1>
@@ -103,6 +105,24 @@
           <button type="submit">Add Card</button>
         </form>
       </div>
+      <!-- end of add new card -->
+
+      <!-- add new skill -->
+      <div class="container3">
+        <h1>Add New Skill</h1>
+        <form action="/admin/addSkill" method="post">
+          <input type="text" name="logo" placeholder="Enter URL" required />
+          <input type="text" name="title" placeholder="Enter Title" required />
+          <input
+            type="text"
+            name="description"
+            placeholder="Enter Description"
+            required
+          />
+          <button type="submit">Add Skill</button>
+        </form>
+      </div>
+      <!-- end of add new skill -->
     </main>
   </body>
 </html>
