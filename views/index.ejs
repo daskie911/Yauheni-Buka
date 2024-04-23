@@ -49,13 +49,15 @@
         <% if (skills.length > 0) { %> <% skills.forEach(skill => { %>
         <div class="item">
           <div class="icon">
-            <i class="bx bxl-nodejs"><img src="<%= skill.logo %>" /></i>
+            <div class="skill-img"><img src="<%= skill.logo %>" /></div>
             <h4><%= skill.title %></h4>
             <p><%= skill.description %></p>
           </div>
         </div>
         <% }); %> <% } else { %>
-        <h3>No skills yet</h3>
+        <div class="background">
+          <h3 class="no-skills">No skills yet</h3>
+        </div>
         <% } %>
       </div>
     </div>

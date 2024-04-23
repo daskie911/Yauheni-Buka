@@ -179,9 +179,9 @@ nav button#menuButton {
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
 }
 
-.skills .skill-item .item .icon i {
-  font-size: 26px;
-  color: #006b6a;
+.skills .skill-item .item .icon .skill-img {
+  width: 40px;
+  height: 40px;
 }
 
 .skills .skill-item .item h4,
@@ -609,4 +609,23 @@ footer .bottom .contact-me p {
   .feedback .customers .item {
     width: 100%;
   }
+}
+
+.background {
+  background-color: #deebee;
+  width: 400px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.background .no-skills {
+  text-align: center;
+  background-color: #006b6a;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: auto;
+  font-style: italic;
+  font-size: 50px;
 }
