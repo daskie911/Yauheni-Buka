@@ -179,9 +179,10 @@ nav button#menuButton {
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
 }
 
-.skills .skill-item .item .icon .skill-img {
+.skills .skill-item .item .icon img {
   width: 40px;
   height: 40px;
+  color: #006b6a;
 }
 
 .skills .skill-item .item h4,
@@ -614,7 +615,7 @@ footer .bottom .contact-me p {
 .background {
   background-color: #deebee;
   width: 400px;
-  height: 200px;
+  height: 100px;
   border-radius: 10px;
   display: flex;
 }
@@ -627,5 +628,18 @@ footer .bottom .contact-me p {
   padding: 10px;
   margin: auto;
   font-style: italic;
-  font-size: 50px;
+  font-size: 30px;
+  animation: shadow-animation 2s infinite;
+}
+
+@keyframes shadow-animation {
+  0% {
+    box-shadow: 0 0 0 0 #006b6a;
+  }
+  50% {
+    box-shadow: 0 0 20px 10px #006b6a;
+  }
+  100% {
+    box-shadow: 0 0 0 0 #006b6a;
+  }
 }
