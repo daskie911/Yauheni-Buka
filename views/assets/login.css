@@ -19,7 +19,7 @@ body {
 
 .container {
   background-color: #fff;
-  border-radius: 0; /* Set border radius to 0 for square borders */
+  border-radius: 10px; /* Set border radius to 0 for square borders */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
