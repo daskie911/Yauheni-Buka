@@ -10,7 +10,8 @@ router.get("/", async (req, res) => {
     if (req.session && req.session.user) {
       const cards = await Card.find(); // get all cards
       const contacts = await Contact.find(); // get all contacts
-      res.render("admin", { contacts, login: req.session.user, cards }); // render admin page with contacts and cards
+      const skills = await Skill.find(); // get all skills
+      res.render("admin", { contacts, login: req.session.user, cards, skills }); // render admin page with contacts and cards
     } else {
       res.redirect("/");
     }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/admin.css" />
+    <link rel="stylesheet" href="assets/style.css" />
     <title>Admin</title>
   </head>
   <body>
@@ -37,46 +38,54 @@
       <% }); %>
       <hr />
       <br />
-      <!-- edit cards and delete-->
-      <% if (cards.length > 0) { %> <% cards.forEach(card => { %>
-      <div class="container1">
-        <form action="/admin/editCards/<%= card._id %>" method="post">
-          <input
-            type="text"
-            name="image"
-            placeholder="Enter Image Url"
-            value="<%= card.image %>"
-          />
-          <input
-            type="text"
-            name="title"
-            placeholder="Enter Title"
-            value="<%= card.title %>"
-          />
-          <input
-            type="text"
-            name="description"
-            placeholder="Enter Description"
-            value="<%= card.description %>"
-          />
-          <input
-            type="text"
-            name="link"
-            placeholder="Link"
-            value="<%= card.link %>"
-          />
-          <button type="submit">Add Changes</button>
-        </form>
-        <!-- delete card -->
-        <form action="/admin/deleteCards/<%= card._id %>" method="post">
-          <button type="submit">Delete</button>
-        </form>
+      <div class="portfolio" id="portfolio">
+        <div class="portfo-items">
+          <!-- portfolio -->
+          <% if (cards.length > 0) { %> <% cards.forEach(card => { %>
+          <div class="item">
+            <img src="<%= card.image %>" />
+            <form action="/admin/editCards/<%= card._id %>" method="post">
+              <p>Image</p>
+              <input
+                type="text"
+                name="image"
+                placeholder="Enter Image Url"
+                value="<%= card.image %>"
+              />
+              <p>Title</p>
+              <input
+                type="text"
+                name="title"
+                placeholder="Enter Title"
+                value="<%= card.title %>"
+              />
+              <p>Description</p>
+              <input
+                type="text"
+                name="description"
+                placeholder="Enter Description"
+                value="<%= card.description %>"
+              />
+              <p>Link</p>
+              <input
+                type="text"
+                name="link"
+                placeholder="Link"
+                value="<%= card.link %>"
+              />
+              <button type="submit">Add Changes</button>
+            </form>
+            <form action="/admin/deleteCards/<%= card._id %>" method="post">
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+          <% }); %> <% } else { %>
+          <h3>No cards yet</h3>
+          <% } %>
+        </div>
       </div>
-      <% }); %> <% } else { %>
-      <p>No cards found</p>
-      <% } %>
-      <!-- end of edit cards -->
-
+      <!-- end of portfolio -->
+      <hr />
       <!-- add new card -->
       <hr />
       <div class="container2">
@@ -121,6 +130,20 @@
           />
           <button type="submit">Add Skill</button>
         </form>
+      </div>
+      <!-- end of add new skill -->
+      <hr />
+      <div class="skills" id="skills">
+        <div class="skill-item">
+          <!-- all skills -->
+          <% if (skills.length > 0) { %> <% skills.forEach(skill => { %>
+          <div class="item">
+            <img src="<%= skill.logo %>" />
+          </div>
+          <% }); %> <% } else { %>
+          <h3>No cards yet</h3>
+          <% } %>
+        </div>
       </div>
       <!-- end of add new skill -->
     </main>
