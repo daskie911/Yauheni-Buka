@@ -1,5 +1,3 @@
-
-
 /* Header styles */
 header {
   background-color: #f2f2f2;
@@ -56,19 +54,124 @@ form button {
 }
 
 /* Card styles */
-.container1 input[type="text"] {
+.container1 {
+  display: flex;
+  margin-left: 20px;
+  height: 200px;
+  width: 400px;
+  border: 2px solid rgb(106, 106, 200);
+  border-radius: 10px;
+}
+.container1 input {
   width: 100%;
+  margin-left: 10px;
+  margin-top: 20px;
 }
 
 .container1 button[type="submit"] {
   margin-top: 10px;
+  text-align: center;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: #512da8;
+  margin-top: 10px;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.background-color {
+  background-color: #cad8f6;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Card edit and delete styles */
+
+.inputs {
+  margin-left: 20px;
+  width: 400px;
+  border: 2px solid rgb(106, 106, 200);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+button {
+  margin-top: 10px;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+h1 {
+  color: #512da8;
+  margin-top: 10px;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.background-color {
+  background-color: #cad8f6;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Add New Cards Styles */
+
+.container2 {
+  margin-left: 20px;
+  height: 400px;
+  width: 400px;
+  border: 2px solid rgb(106, 106, 200);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container2 input {
+  width: 300px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.container2 button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #512da8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 /* Skill styles */
-.container3 input[type="text"] {
-  width: 100%;
+
+.container3 {
+  display: flex;
+  margin-left: 20px;
+  height: 250px;
+  width: 400px;
+  border: 2px solid rgb(106, 106, 200);
+  border-radius: 10px;
 }
 
-.container3 button[type="submit"] {
-  margin-top: 10px;
+.container3 input {
+  width: 100%;
+  margin-left: 10px;
+  margin-top: 20px;
 }

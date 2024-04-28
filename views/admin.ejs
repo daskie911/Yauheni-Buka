@@ -17,6 +17,8 @@
     </header>
     <main>
       <% contacts.forEach(contact => { %>
+      <div class="background-color"><h1>Edit Contacts</h1></div>
+
       <div class="container1">
         <form action="/admin/editContacts/<%= contact._id %>" method="post">
           <input
@@ -38,6 +40,7 @@
       <% }); %>
       <hr />
       <br />
+      <div class="background-color"><h1>Edit and Delete Card</h1></div>
       <div class="portfolio" id="portfolio">
         <div class="portfo-items">
           <!-- portfolio -->
@@ -45,34 +48,37 @@
           <div class="item">
             <img src="<%= card.image %>" />
             <form action="/admin/editCards/<%= card._id %>" method="post">
-              <p>Image</p>
-              <input
-                type="text"
-                name="image"
-                placeholder="Enter Image Url"
-                value="<%= card.image %>"
-              />
-              <p>Title</p>
-              <input
-                type="text"
-                name="title"
-                placeholder="Enter Title"
-                value="<%= card.title %>"
-              />
-              <p>Description</p>
-              <input
-                type="text"
-                name="description"
-                placeholder="Enter Description"
-                value="<%= card.description %>"
-              />
-              <p>Link</p>
-              <input
-                type="text"
-                name="link"
-                placeholder="Link"
-                value="<%= card.link %>"
-              />
+              <div class="inputs">
+                <p>Image</p>
+                <input
+                  type="text"
+                  name="image"
+                  placeholder="Enter Image Url"
+                  value="<%= card.image %>"
+                />
+                <p>Title</p>
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Enter Title"
+                  value="<%= card.title %>"
+                />
+                <p>Description</p>
+                <input
+                  type="text"
+                  name="description"
+                  placeholder="Enter Description"
+                  value="<%= card.description %>"
+                />
+                <p>Link</p>
+                <input
+                  type="text"
+                  name="link"
+                  placeholder="Link"
+                  value="<%= card.link %>"
+                />
+              </div>
+
               <button type="submit">Add Changes</button>
             </form>
             <form action="/admin/deleteCards/<%= card._id %>" method="post">
@@ -88,8 +94,9 @@
       <hr />
       <!-- add new card -->
       <hr />
+
+      <div class="background-color"><h1>Add New Cards</h1></div>
       <div class="container2">
-        <h1>Add New</h1>
         <form action="/admin/addCards" method="post">
           <input
             type="text"
@@ -117,8 +124,8 @@
       <!-- end of add new card -->
 
       <!-- add new skill -->
+      <div class="background-color"><h1>Add New Skill</h1></div>
       <div class="container3">
-        <h1>Add New Skill</h1>
         <form action="/admin/addSkill" method="post">
           <input type="text" name="logo" placeholder="Enter URL" required />
           <input type="text" name="title" placeholder="Enter Title" required />
