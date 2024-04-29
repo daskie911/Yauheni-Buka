@@ -132,4 +132,31 @@ router.post("/deleteSkill/:id", async (req, res) => {
   }
 });
 
+// edit skill by id
+
+router.post("/editSkill/:id", async (req, res) => {
+  try {
+    if (req.session && req.session.user) {
+      const { id } = req.params; // get id from url
+      const { logo, title, description } = req.body;
+      const existingSkill = await Skill.findById(id); // get skill by id
+
+      if (!existingSkill) {
+        // if skill not found
+        return res.redirect("/");
+      }
+      // update skill logo, title, description
+      existingSkill.logo = logo;
+      existingSkill.title = title;
+      existingSkill.description = description;
+      await existingSkill.save(); // save skill
+
+      res.redirect("/admin");
+    }
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
 module.exports = router;
