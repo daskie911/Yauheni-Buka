@@ -142,16 +142,31 @@
       <hr />
       <div class="skills" id="skills">
         <div class="skill-item">
-          <!-- all skills -->
+          <!-- delete skill -->
+
           <% if (skills.length > 0) { %> <% skills.forEach(skill => { %>
           <div class="item">
             <img src="<%= skill.logo %>" />
+            <form action="/admin/deleteSkill/<%= skill._id %>" method="post">
+              <button type="submit">Delete</button>
+            </form>
           </div>
           <% }); %> <% } else { %>
-          <h3>No cards yet</h3>
+          <div class="no-skills">
+            <h3>No skills here</h3>
+          </div>
+
           <% } %>
         </div>
       </div>
+      <!-- end of add new skill -->
+
+      <!-- all skills -->
+      <% if (skills.length > 0) { %> <% skills.forEach(skill => { %>
+      <div class="item">
+        <img src="<%= skill.logo %>" />
+      </div>
+      <% }); %> <% } %>
       <!-- end of add new skill -->
     </main>
   </body>
