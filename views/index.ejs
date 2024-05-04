@@ -188,6 +188,13 @@
       </div>
     </div>
 
+    <form action="/email" method="post">
+      <input type="text" name="title" placeholder="Title" />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+
     <footer>
       <div class="top">
         <div class="logo">
@@ -220,7 +227,5 @@
         </div>
       </div>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
