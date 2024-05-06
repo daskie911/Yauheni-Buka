@@ -10,6 +10,7 @@ const mainRoutes = require("./routes/mainRoutes");
 const loginRoutes = require("./routes/loginRoutes");
 const logOutRoutes = require("./routes/logOutRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const emailRoutes = require("./routes/emailRoutes");
 
 app.engine("ejs", require("ejs").renderFile);
 app.set("view engine", "ejs");
@@ -27,6 +28,7 @@ app.use("/", mainRoutes);
 app.use("/admin", adminRoutes);
 app.use("/logOut", logOutRoutes);
 app.use("/zhenyaLogin", loginRoutes);
+app.use("/email", emailRoutes);
 
 const start = async () => {
   try {
