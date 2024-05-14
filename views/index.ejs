@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </head>
   <body>
     <nav>
@@ -118,6 +119,8 @@
       </div>
     </div>
 
+    <% if (review.length > 0) { %> <% review.forEach(rev => { %> 
+
     <div class="feedback" id="feedback">
       <h5>Clients Reviews</h5>
       <h3>Customers Feedback</h3>
@@ -131,19 +134,17 @@
             <i class="bx bxs-star"></i>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            quod, voluptates, quae, quos quidem dolorum quia voluptatum
-            asperiores, nemo doloremque.
+            <%= rev.review %>
           </p>
           <div class="user">
-            <img src="assets/img/us-1.jpg" />
+            <img src="<%= rev.image %>" />
             <div class="info">
-              <h5>Dianne Russell</h5>
-              <p>Zabka</p>
+              <h5><%= rev.name %></h5>
+              <p><%= rev.company %></p>
             </div>
           </div>
         </div>
-        <div class="item">
+        <!-- <div class="item">
           <div class="rating">
             <i class="bx bxs-star"></i>
             <i class="bx bxs-star"></i>
@@ -185,15 +186,18 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
+    <% }); %> <% } else { %>
+    <h3>No reviews yet</h3>
+    <% } %>
 
-    <form action="/email" method="post">
+    <!-- <form action="/email" method="post">
       <input type="text" name="title" placeholder="Title" />
       <input type="email" name="email" placeholder="Email" required />
       <textarea name="message" placeholder="Message" required></textarea>
       <button type="submit">Send</button>
-    </form>
+    </form> -->
 
     <footer>
       <div class="top">

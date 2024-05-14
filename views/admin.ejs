@@ -189,6 +189,24 @@
       </div>
 
       <!-- end of add new skill -->
+
+      <!-- adding riviews -->
+      <form action="/admin/addReview" method="post">
+        <input
+          type="number"
+          name="rating"
+          placeholder="Add rating"
+          max="5"
+          min="1"
+          required
+        />
+        <input type="text" name="review" placeholder="Add review" required />
+        <input type="text" name="image" placeholder="Add image" required />
+        <input type="text" name="name" placeholder="Add name" required />
+        <input type="text" name="company" placeholder="Add company" required />
+        <button type="submit">Add Review</button>
+      </form>
+      <!-- end of adding reviews -->
     </main>
   </body>
 </html>

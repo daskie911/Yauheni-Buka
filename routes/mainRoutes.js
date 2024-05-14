@@ -2,16 +2,17 @@ const { Router } = require("express");
 const Contact = require("../model/Contact");
 const Card = require("../model/Card");
 const Skill = require("../model/Skill");
-const sendGridMail = require("@sendgrid/mail");
+const Review = require("../model/Review");
+
 const router = new Router();
-sendGridMail.setApiKey(`${process.env.API_KEY}`);
 
 router.get("/", async (req, res) => {
   try {
     const contact = await Contact.findOne();
     const cards = await Card.find().sort({ _id: -1 });
     const skills = await Skill.find().sort({ _id: -1 });
-    res.render("index", { cards, contact, skills });
+    const review = await Review.find().sort({ _id: -1 });
+    res.render("index", { cards, contact, skills, review });
   } catch (err) {
     console.log(err);
     res.status(500).send("Something went wrong");

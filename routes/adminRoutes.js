@@ -2,6 +2,7 @@ const { Router } = require("express");
 const Contact = require("../model/Contact");
 const Card = require("../model/Card");
 const Skill = require("../model/Skill");
+const Review = require("../model/Review");
 
 const router = new Router();
 
@@ -151,6 +152,22 @@ router.post("/editSkill/:id", async (req, res) => {
       existingSkill.description = description;
       await existingSkill.save(); // save skill
 
+      res.redirect("/admin");
+    }
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
+// add review
+
+router.post("/addReview", async (req, res) => {
+  try {
+    if (req.session && req.session.user) {
+      const { rating, review, image, name, company } = req.body;
+      const newReview = new Review({ rating, review, image, name, company });
+      await newReview.save();
       res.redirect("/admin");
     }
   } catch (error) {
